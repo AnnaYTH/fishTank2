@@ -45,7 +45,6 @@ View.prototype.eventSet = function() {
                 {pos: [300, 300],
                 size: [size1, size1]
                 })
-                debugger
             tank01.fishes.push(newFish); 
         }
     })
@@ -91,7 +90,6 @@ View.prototype.eventSet = function() {
             tank01.money -= 3000; 
             tank01.foodSize[0] += 5; 
             tank01.foodSize[1] += 5; 
-            debugger
         }
     })
 
@@ -120,7 +118,7 @@ View.prototype.eventSet = function() {
     // watch an ad for free coins
     const adButton = document.getElementById("watch_ad_button"); 
     adButton.addEventListener("click", function() {
-        alert('You won the game! Here is 1000 coins'); 
+        alert('You won the game! Here is 100000 coins'); 
         tank01.money += 100000; 
     })
     
