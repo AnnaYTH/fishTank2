@@ -23,14 +23,18 @@ View.prototype.eventSet = function() {
         const offsetX = 110; 
         const offsetY = 110; 
         // logic to only add food within the canvas window?
-        if(event.clientX > 25 && event.clientX < 900 && event.clientY > 25 && event.clientY < 500) {
-            const foodParticle = new Food(
-                {pos: [event.clientX - offsetX, event.clientY - offsetY],
-                size: tank01.foodSize})
-                if(tank01.food.length < tank01.foodLimit) {
-                    tank01.food.push(foodParticle); 
-                    tank01.money -= 5
-                } 
+        if(tank01.money >= 5) {
+            if(event.clientX > 25 && event.clientX < 900 && event.clientY > 25 && event.clientY < 500) {
+                const foodParticle = new Food(
+                    {pos: [event.clientX - offsetX, event.clientY - offsetY],
+                    size: tank01.foodSize})
+                    if(tank01.food.length < tank01.foodLimit) {
+                        tank01.food.push(foodParticle); 
+                        tank01.money -= 5
+                    } 
+            }
+        } else {
+            alert('You have no money! Here is 5 coins, but maybe you should consider making other life choices')
         }
     })
 
