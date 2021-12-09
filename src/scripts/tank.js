@@ -90,7 +90,6 @@ function win(tank) {
             return; 
         }
         win.style.visibility = 'visible'; 
-        // debugger
     }
 }
 
@@ -130,13 +129,13 @@ Tank.prototype.moveObjects = function(ctx) {
             this.money += (this.poopValue * this.foodLevel);  // poop hits floor, money gets made
         }
     }
-    // print everything to the screen
+ 
     this.checkCollision(); 
+    // print everything to the screen
     this.draw(ctx); 
 }
 
 Tank.prototype.addFish = function() {
-    // add a click event for this
     let fish1 = new Fish({
         pos: [50, 300],
         size: [30, 30],
@@ -254,7 +253,6 @@ Tank.prototype.changeWater = function() {
         '#BDB5D5'
     ]
     let colors = blueColors.concat(purpleColors); 
-    // debugger
     let colorNum = Util.random(0, colors.length)
     debugger
     this.waterColor = colors[colorNum]

@@ -30,7 +30,6 @@ const Util = {
     radius(width, length) {
         let num = (width * width) + (length * length); 
         num = Math.sqrt(num); 
-
         return (num * 0.5); 
     }
 }

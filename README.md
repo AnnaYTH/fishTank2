@@ -14,13 +14,23 @@ As your fish eats more it will also poop more. Suddenly all your neighobrs and f
 # Wireframe
 
 ![alt text](https://github.com/AnnaYTH/Fish_Feeder/blob/main/wireframe.png)
-<!-- <img src="https://github.com/AnnaYTH/Fish_Feeder/blob/main/wireframe.png"> -->
 
 # Technology 
 * Javascript
 * Canvas
 * HTML and CSS
 * Webpack
+
+# Code Snippit 
+I added a radius function to my Util that allows me to change the hitboxes that determine collisions (circumscribed circles around the square image) to be variable with regards to the length of the printed image (and accounted for future references of fish that may be rectangular and not square)
+```JS
+radius(width, length) {
+        let num = (width * width) + (length * length); 
+        num = Math.sqrt(num); 
+        return (num * 0.5); 
+    }
+```
+
 
 # TimeFrame
 * Friday Afternoon and Weekend - Set up fish tank and fish with variable images and food options, make the food spawn on a click at the click and make fish swim towards the food to consume it. Fish will be able to detect presence of food, otherwise the fish will be randomly swimming around. I have fish and food that are rectangles. Now I need to make them move and collide with each other.

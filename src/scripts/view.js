@@ -14,29 +14,7 @@ View.prototype.start = function () {
 
     const tankBind = this.tank.moveObjects.bind(this.tank, this.ctx); 
     setInterval(tankBind, 120);  
-
-    // reset game
-    // const resetButton = document.getElementById("reset_game"); 
-    // resetButton.addEventListener("click", function() {
-    //     if(confirm("Are you sure you want to start over?")) {
-    //         // debugger
-    //         clearInterval(1)
-    //         // debugger
-    //         new_tank = new Tank(); 
-    //         this.tank = new_tank;
-
-    //         const tankBind = this.tank.moveObjects.bind(this.tank, this.ctx); 
-    //         setInterval(tankBind, 20);
-    //     }
-    // })
-
 }
-// function win(tank) {
-//     if(tank.money >= 500) {
-//         const win = document.getElementById("win_condition"); 
-//         win.style.visibility = 'visible'; 
-//     }
-// }
 
 View.prototype.eventSet = function() {
     const tank01 = this.tank; 
