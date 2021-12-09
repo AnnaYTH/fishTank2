@@ -96,11 +96,11 @@ function win(tank) {
 Tank.prototype.moveObjects = function(ctx) {
     // update statistics
     this.checkStats(); 
-    if(this.money < 0) {
-        alert('Happy Birthday! Love Grandma')
-        alert('Grandma sent you $50')
-        this.money += 50; 
-    }
+    // if(this.money < 0) {
+    //     alert('Happy Birthday! Love Grandma')
+    //     alert('Grandma sent you $50')
+    //     this.money += 50; 
+    // }
 
     // moves all the food
     for(let i = 0; i < this.food.length; i++) {
