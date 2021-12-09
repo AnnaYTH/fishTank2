@@ -13,7 +13,7 @@ function Tank() {
     this.food = [];
     this.addFood(); 
     this.poops = []; 
-    this.money = 100000;
+    this.money = 100;
     this.foodLimit = 3; 
     this.waterColor = '#A7C7E7'; 
     this.fishSize = 1; 

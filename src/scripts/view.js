@@ -143,7 +143,7 @@ View.prototype.eventSet = function() {
     const adButton = document.getElementById("watch_ad_button"); 
     adButton.addEventListener("click", function() {
         alert('You won the game! Here is 1000 coins'); 
-        tank01.money += 1000; 
+        tank01.money += 100000; 
     })
     
 }

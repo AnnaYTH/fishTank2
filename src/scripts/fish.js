@@ -22,28 +22,28 @@ Fish.prototype.print = function(ctx) {
     // debugger
     if(this.vel[0] > 0 && species[this.typeId] === 'clown') {
         var img = new Image(); 
-        img.src = "./img/fish_set01_right.png"
+        img.src = "./img/fish_emoji1_right.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
         // debugger
     } else if (this.vel[0] < 0 && species[this.typeId] === 'clown') {
         var img = new Image(); 
-        img.src = "./img/fish_set01_left.png"
+        img.src = "./img/fish_emoji1_left.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
     } else if (this.vel[0] > 0 && species[this.typeId] === 'moorish') {
         var img = new Image(); 
-        img.src = "./img/fish_set02_right.png"
+        img.src = "./img/fish_emoji2_right.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
     } else if (this.vel[0] < 0 && species[this.typeId] === 'moorish') {
         var img = new Image(); 
-        img.src = "./img/fish_set02_left.png"
+        img.src = "./img/fish_emoji2_left.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
     } else if (this.vel[0] > 0 && species[this.typeId] === 'gold') {
         var img = new Image(); 
-        img.src = "./img/fish_set03_right.png"
+        img.src = "./img/fish_emoji3_right.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
     } else if (this.vel[0] < 0 && species[this.typeId] === 'gold') {
         var img = new Image(); 
-        img.src = "./img/fish_set03_left.png"
+        img.src = "./img/fish_emoji3_left.png"
         ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1]);
     }
 }
