@@ -5,7 +5,7 @@ const Tank = require("./tank");
 function Fish(options) {
     MovingObject.call(this, {
         pos: options.pos, 
-        vel: Util.randomVec(5), 
+        vel: Util.randomVec(4), 
         size: options.size, 
         game: options.game, 
         typeId: Util.random(0, 2)
@@ -52,7 +52,7 @@ Fish.prototype.swim = function(ctx) {
     this.pos[1] += this.vel[1]; 
 
     // slow down if they're exiting hungry mode where min is hungry velocity
-    if((this.vel[0] + this.vel[1]) > 10) {
+    if((this.vel[0] + this.vel[1]) > 7) {
         this.vel = Util.scale(this.vel, 0.5); // fish gonna have the same direction, but slower speed once all food is gone 
     }
     // BOUNCE LOGIC
