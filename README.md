@@ -22,7 +22,7 @@ As your fish eats more it will also poop more. Suddenly all your neighobrs and f
 * Webpack
 
 # Code Snippit 
-I added a radius function to my Util that allows me to change the hitboxes that determine collisions (circumscribed circles around the square image) to be variable with regards to the length of the printed image (and accounted for future references of fish that may be rectangular and not square)
+I added a radius function to my Util that allows me to change the hitboxes that determine collisions (circumscribed circles around the square image) to be variable with regards to the length of the printed image. I also accounted for future references of fish that may be rectangular and not square.
 ```JS
 radius(width, length) {
         let num = (width * width) + (length * length); 

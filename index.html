@@ -22,6 +22,9 @@
                 <p id='instruction_text'>
                     Aspiring plant parents, gardeners, and farmers want to buy your pets' poops. It apparently makes great fertilizer. This is now your life. Are you ready?
                 </p>
+                <p id='instruction_text' style="font-size: 12px;">
+                    * if you would like to just test out buttons feel free to watch an ad first for free coins
+                </p>
                 <p>
                     <button class='instruction_button' id='hide_instructions' onclick="hide()"> I'm Ready! </button>
                 </p>
@@ -112,6 +115,16 @@
                     <li>
                         <button class="button" id ='watch_ad_button' type= 'button' title='Watch an ad for Free Coins'> Watch Ad </button>
                     </li>
+                    <!-- <li>
+                        <button class='button' onclick='show'> Show Instructions </button>
+                        <script>
+                            function show() {
+                                const inst = document.getElementById("instruction")
+                                console.log(inst); 
+                                inst.style.visibility ='visible'
+                            }
+                        </script>
+                    </li> -->
                     <li>
                         <a href="index.html">
                             <button class='button' id='reset_game' type='button' title='Start from scratch?'> Reset Game </button>
