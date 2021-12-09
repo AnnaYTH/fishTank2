@@ -34,7 +34,8 @@ View.prototype.eventSet = function() {
                     } 
             }
         } else {
-            alert('You have no money! Here is 5 coins, but maybe you should consider making other life choices')
+            alert('You have no money! Here is 10 coins, but maybe you should consider making other life choices')
+            tank01.money += 10; 
         }
     })
 
