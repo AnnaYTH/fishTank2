@@ -14,7 +14,7 @@ Util.inherits(Poop, MovingObject);
 
 Poop.prototype.excrete = function(ctx) {
     var img = new Image(); 
-    img.src = "../img/Poop_Emoji.png"
+    img.src = "./img/Poop_Emoji.png"
     ctx.drawImage(img, this.pos[0], this.pos[1], this.size[0], this.size[1])
 }
 
