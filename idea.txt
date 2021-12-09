@@ -1,0 +1,132 @@
+
+11:25
+You start out with a fish
+11:25
+and you can click to feed your fish and the more you feed it themore it poops
+11:27
+For some reason, your animals create amazing very fertile poops, so there are a number of farmers and horticulturalists that create a demand for your pets poops
+11:28
+So you can upgrade the people who you sell your poop to, and you can also buy more pets to make more poops, you can also upgrade the kind of food you feed your pets, so they make even better poop that sells for more
+
+    I want to do a clicker game. The user just moved into a new really ugly and tiny apartment. As a housewarming gift, one of their friends gives them a fish. The initial environment will be a fish tank. The fish will "swim" around the tank randomly. You click on the tank to feed the fish. One day the user discovers that their fishs' poop is full of a ton of nutrients. When it poops, the poop will be converted into money because, obviously, everyone wants to buy your pets' poop. It's good for growing plants. You can then use this money to buy more fish, better food, a bigger tank. There can be tank and fish customizations that do not add to productivity, but make the tank prettier.     
+    The end goal will be to save up to buy a new house. If I have time, then I'll have the game expand, so after your fish are fully upgraded, your new house has a rabbit hutch in the backyard, and you can start selling rabbit poop. Then a dog house, and so on until we get a barn full of cows that poop a whole lot. 
+    Part of what I like about this project is that it's a simple concept, but there's a ton of stuff I can add to it to make it more complicated and I can continue to work on it more and more. 
+    My guess is that I will use canvas, but if there's something else better that I find along the way, then I have no problem switching. 
+
+Each fish (pet) will have it's own profile. You can name each fish (but if you do not want to then I will autofill the pets name with Faker or something, there will be a button to generate a random name.) Each fish will have a time tracker that states when it was adopted and how much poop it has pooped. There will be an option to favorite a pet, and a list so you can pull up of all your favorites. 
+
+I was thinking when I click on the tank the fish food spawns in that column and “drifts” down until a fish collides with it. If a fish doesn’t get to it in time then it disappears.
+So part of the upgrade will be to increase the size of the tank which is the height of the tank so that fish will have more time to get to the food
+The fish are randomly moving around. Then if there’s food in the tank then they will swim at x rate to try to get to the food. So you can upgrade to get them to swim faster
+
+
+David
+Andrew Vitovitch
+Kyle Ginzburg
+Mackinjosh Zumarraga
+Sam Gelernter
+Visshal Kannan
+
+John
+Alex Dziuba
+Alex Wong
+Andy Yu
+Anuj Gupta
+Joseph Manso
+Izzy Peikes
+
+Kin Ka
+Brian Lin
+Christian Lee
+Julio Tavarez
+Marco Countryman
+
+Sam
+Anna Trott-Herdrich
+Chaya Cohen
+Emily Ng
+Sonja Ng
+Susan Zea
+Virginia Knight
+
+Sammy
+Anthony Carroll
+Jason Chu
+Josh Laikowsky
+
+Tahj
+Caleb Jones
+Nicholas Barrameda
+Stella Choi
+Stephanie Soni
+Steven Sookhai
+Tashi Sangpo
+
+
+Yeah I have a function random(x) that takes in a number and outputs a random number between 0 and x
+12:02
+Way easier than Math.Rand() * x every single time.
+12:03
+Right now it’s just living at the top of my moving Object code. But I know in lecture they said something about how if you put it in some file…. It’s accessible for everything
+12:03
+I’m lying here thinking I might have f myself in terms of making my fish move towards the food
+12:06
+I think I need to add a state to my fish
+
+foodPresent and foodAbsent
+If the food is absent then my fish just swims around randomly.
+If food is present then I’m gonna have to do some vector math where I take the difference in pos[1] and pos[2] and then calculate hungry_velocity times the tangent of the difference of pos2 / pos 1
+…. Freakin trigonometry coming back to bite me in the ass
+12:06
+I’m literally lying in bed thinking soh cah toa
+12:11
+Bro…. At first I was gonna try to math and make my fish smart enough to calculate the time it takes them to get to the food, the food’s relative velocity, and estimate where the food would be by the time the fish got to it…. But fish are fucking dumb and so am I. So the first is just gonna keep reevaluating it’s trajectory to be towards wherever the food pellet is currently
+
+
+I've been thinking about fish behavior more, and now I think instead of writing a fish state that determines if there is food or not, I'll write two different fish movement instance methods, and then in the tank class I'll check the food array length, and that will determine which fish instance movement function I end up calling (still need to think about which instance of food each fish will move towards when there is more than one food present, maybe just stick to one food at a time for the moment, and then add in more food later, or maybe all the fish converge on the first food until it's eaten and then move towards the second. )
+
+Its gonna be weird... because I'll have to have the "fish moving towards food function" take in an instance of food and extract it's position, and then vector math its way towards the food, but my fish class won't actually have access to an instance of food until I'm in my tank class
+
+shop tab -
+color of water, type of fish, add cute things
+
+fish class - 
+add color/image types (don't forget to change the direction the fish is looking depending on its x velocity being positive or negative)
+give the option to change size 
+give the option to change speed
+give the option to name 
+give the option to add age 
+give a fun fish fact! (query a database....?)
+
+12/5/2021 clean up code - here are the comments complicated
+fish 
+    I kind of want to rework the velocity vector to be more dynamic
+    Made the radius of the fish half the length of the hypotenuse (not dynamic)
+    When my fish switches from hungry mode to chill mode I need to slow them down again (probably in my tank method) or maybe an if conditional inside my swim class (if my fish is going over this speed, then reset swim vector)
+
+food 
+    same radius to hypotenuse logic as fish 
+    add a conditional to lose money when they drop a piece of food in (probably in tank logic when I push into the food array)
+MovingObject
+    does nothing and I should just remove it
+Tank 
+    watch the es6/5 logic, it gave me errors for a bit when I used es5?
+            // class Tank {
+        //     constructor() {
+        //         this.DIM_X = 900 ;
+        //         this.DIM_Y = 500 ;
+        //         this.fishes = []; 
+        //         this.addFish()
+        //         this.food = [];
+        //         this.addFood(); 
+        //     }
+        // }
+    watch the food shift() logic in check collisions, I tried it with splice and slice and it didn't like either of them for some reason only shift and pop work. 
+Util 
+    added in a random function that I will try to use later to randomize the swim speeds of fish in chill state 
+    fish distance is later compared to the two hardcoded  radii of the fish and the food 
+    look at scale to decrease/increase speed in the velocity vector 
+View    
+    has so little at the moment, will eventually be used to incorporate a player class and tank instance so everyone has their own game 
+
+Fish can merge / an older fish an eat a younger fish to "evolve"

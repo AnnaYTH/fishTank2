@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanknation</title>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+    <div id='instruction' class='instruction'>
+                <p id='instruction_text'> 
+                    Hey! Thanks so much for taking the time to check out my fish tank game. Feel free to rename your own fish tank.      
+                </p>
+                <p id='instruction_text'>
+                    Feed your fish on a click (every piece of food is 5 coins). And whoa look at that, your fish just took an absolutely massive... 💩
+                </p>
+                <p id='instruction_text'>
+                    Aspiring plant parents, gardeners, and farmers want to buy your pets' poops. It apparently makes great fertilizer. This is now your life. Are you ready?
+                </p>
+                <p>
+                    <button class='instruction_button' id='hide_instructions' onclick="hide()"> I'm Ready! </button>
+                </p>
+                <script>
+                    function hide() {
+                        document.getElementById("instruction").style.visibility ='hidden'
+                        document.getElementById("show_instructions").style.visibility='visible'
+                    }
+                </script>
+    </div>
+
+    <div id='win_condition' class='win_condition' style="visibility: hidden">
+        <p>
+            You've made enough money to quit your day job! (Yes your day job paid very little.)
+            Congratulations. 
+        </p>
+        <button class='instruction_button' id='hide_instructions' onclick=hide2()> Thank You! </button>
+        <script>
+            function hide2() {
+                const win = document.getElementById('win_condition');
+                win.style.visibility='hidden'; 
+                win.id = 'completed';
+            }
+        </script>
+    </div>
+                
+    <h1 id='name' class='name'> The Tank </h1>
+    <div id='horizontal'>
+        <div id='left' class='left'>
+            <canvas id="game-canvas" width="900" height="500" style='border:10px solid #a59b8e; margin: 10px; border-radius: 10px;'> PLEASE USE A BROWSER THAT SUPPORTS CANVAS TO SEE MY CREATION</canvas>
+            
+        </div>
+
+        <div id='vertical' class='vertical' style='overflow-y: scroll'>
+            <hr>
+            <div id='stats' class='stats'> Statistics
+                <div id='money'> </div>
+                <div id='numOfFish'> </div>
+                <div id='numOfFood'> </div>
+                <div id='fishSize'> </div>
+                <div id='fishLevel'> </div>
+                <div id='foodSize'> </div>
+                <div id='foodLevel'> </div>
+            </div>
+
+            <hr>
+            <div id='socials' class='socials'>
+                <a href="https://www.linkedin.com/in/annatrottherdrich/" target="_blank">
+                    <i class="fa fa-linkedin-square" style="font-size:48px; color:#5a3920"></i>
+                </a>
+                <a href="https://github.com/AnnaYTH" target="_blank">
+                    <i class="fa fa-github" style="font-size:48px;color:#5a3920"></i>
+                </a>
+                <a href="https://www.instagram.com/roaringdragonite/" target="_blank">
+                    <i class="fa fa-instagram" style="font-size:48px;color:#5a3920"></i>
+                </a>
+            </div>
+        
+            <!-- <hr> -->
+            
+            <!-- <div id='instruction' class='instruction'>
+                <p id='instruction_text'>HEY GUYS THIS IS MY GAME. GOOD LUCK BUDDY. HERE ARE THE INSTRUCTIONS. BLAH BLAH BLAH BLAH BLAH
+                    <button class='instruction_button' id='hide_instructions' onclick="hide()"> Minimize Instuctions </button>
+                </p>
+                
+                <script>
+                    function hide() {
+                        document.getElementById("instruction_text").style.visibility ='hidden'
+                        document.getElementById("show_instructions").style.visibility = 'visible'
+                    }
+                </script>
+
+                <button class='instruction_button' id='show_instructions' onclick="show()" style='visibility: hidden;'> Show Instructions </button>
+                <script>
+                    function show() {
+                        document.getElementById("show_instructions").style.visibility = 'hidden'
+                        document.getElementById("instruction_text").style.visibility ='visible'
+                    }
+                </script>
+            </div> -->
+
+            <hr>
+
+            <div id='store'>
+                <p> Store </p>
+                <ul>
+                    <li>
+                        <button class="button" id='new_fish_button' type= 'button' title='Buy a New Fish for 100 coins'> Buy New Fish </button>
+                    </li>
+                    <li>
+                        <button class='button' id='increase_food_limit' title='Increase the amount of food you can drop by one for $500 (limit 10)'> Increase Food Limit </button>
+                    </li>
+                    <li>
+                        <button class='button' id='increase_fish_size' title='For 5000 increase the size of all your fish (Limit 10)'> Grow Your Fish </button>
+                    </li>
+                    <li>
+                        <button class='button' id='increase_fish_level' title='for 5000 increase the level of your fish (this will increase the size of their poops)Limit 10.'> Level up your Fish</button>
+                    </li>
+                    <li>
+                        <button class='button' id='increase_food_size' title='for 3000 increase the size of your food (easier for your fish to eat) Limit 7.'> Upgrade Food Size </button>
+                    </li>
+                    <li>
+                        <button class='button' id='increase_food_level' title='Feed your fish better value food for better value poops. (Limit 3) for 10000'> Upgrade Food Nutrition </button>
+                    </li>
+                    <li>
+                        <button class='button' id='change_water_color' title='Randomize the color of the water for 10 coins'> Change the Water </button>
+                    </li>
+                    <li>
+                        <button class="button" id='rename_tank' type='button' title='Rename your Fish Tank for 50 coins'> Rename Your Fish Tank </button>
+                    </li>
+                    <li>
+                        <button class="button" id ='watch_ad_button' type= 'button' title='Watch an ad for Free Coins'> Watch Ad </button>
+                    </li>
+                    <li>
+                        <button class='button' id='reset_game' type='button' title='Start from scratch?'> Reset Game </button>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+        </div>
+
+    </div>
+    <!-- <div>
+        <audio src="purrple-cat-silent-wood.mp3" id='audio'></audio>
+        <button onclick="playMusic()"> Play Music </button>
+        <script>
+            function playMusic() {
+                document.getElementById('audio').play(); 
+            }
+        </script>
+    </div> -->
+
+</body>
+</html>
+
+<!-- <button id='new_fish_button' onclick="addFish()"> Buy New Fish </button> -->
+ <!-- <link rel="stylesheet" href="./dist/main.css" /> -->
+
+
+ <!-- <button id = 'new_fish_button' type= 'button'> Buy New Fish </button> -->
+
+ <!-- <input type="submit" value ='Buy New Fish' id='new_fish_button'> -->
+
+ <!-- <input type="submit" value='Watch Ad' id='ad_button'/> -->
+
+ <!-- <canvas id='stats' width="200" height="100" style='border:10px solid #f6bd5a; margin: 10px'></canvas> -->
+
+ <!-- <details id='stats' width="200" height="100" style='border:10px solid #f6bd5a; margin: 10px'> -->
+<!-- </details> -->
