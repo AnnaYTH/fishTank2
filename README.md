@@ -1,4 +1,6 @@
-https://annayth.github.io/fishTank2/
+Just a bookmark for what I was able to accomplish in less than a week during App Academy's 16 week software engineering course, feel free to check out the additions that I've added since [here](https://github.com/AnnaYTH/fishTank3)
+
+[Live Link](https://annayth.github.io/fishTank2/)
 
 # Background:
 
